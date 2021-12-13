@@ -8,8 +8,9 @@ namespace Core.Specification
     {
         public ProductsWIthTypesAndBrandsSpecification()
         {
-            AddInclude(x => x.ProductType);
+            AddInclude(y => y.ProductType);
             AddInclude(x => x.ProductBrand);
+            
         }
 
         public ProductsWIthTypesAndBrandsSpecification(int id) : base(x =>x.Id == id)
