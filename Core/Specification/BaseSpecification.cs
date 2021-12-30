@@ -6,6 +6,8 @@ namespace Core.Specification
 {
     public class BaseSpecification<T> : ISpecification<T>
     {
+
+
         public BaseSpecification()
         {
         }
@@ -14,6 +16,9 @@ namespace Core.Specification
         {
             Criteria = criteria;
         }
+
+//implement Properities from Parent interface
+
 
         public Expression<Func<T, bool>> Criteria {get;}
          
@@ -28,12 +33,15 @@ namespace Core.Specification
 
         public bool IsPagingEnable {get; private set;}
 
-
-
         public int Take {get; private set;}
 
 
         public int Skip {get; private set;}
+
+
+
+
+
 
 
         protected void AddInclude(Expression<Func<T, object>> includeExpression)

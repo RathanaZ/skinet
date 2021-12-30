@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Core.Entities;
 using Core.Specification;
@@ -31,6 +32,7 @@ namespace Infrastructure.Data
             }
 
             query = spec.Include.Aggregate(query, (current, include) => current.Include(include));
+            Console.WriteLine(query);
             return query;
         }
     }
