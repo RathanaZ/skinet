@@ -22,6 +22,7 @@ namespace API.Controllers
             }
             return Ok();
         }
+
         [HttpGet("servererror")]
         public ActionResult GetServerError()
         {
@@ -29,10 +30,12 @@ namespace API.Controllers
             var thingToReturn = thing.ToString();
             return Ok();
         }
+
         [HttpGet("badrequest")]
         public ActionResult GetBadRequest()
         {
-            return Ok(new ApiResponse(400));
+            return BadRequest(new ApiResponse(400));
+         
         }
         [HttpGet("badrequest/{id}")]
         public ActionResult GetBadRequest(int id)
